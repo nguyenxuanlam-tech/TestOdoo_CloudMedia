@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="khach_hang_view" model="ir.ui.view">
+            <field name="name">khach.hang.view</field>
+            <field name="model">khach.hang</field>
+            <field name="arch" type="xml">
+                <form string="ModelTitle">
+                    <sheet>
+                        <div>
+                            <div class="oe_title">
+                                <label for="name"/>
+                                <h1>
+                                    <field name="name" placeholder="Title"/>
+                                </h1>
+                            </div>
+                            <div style="float:right; width: 100px; height:100px;">
+                                <field name="img" widget="image"/>
+                            </div>
+                        </div>
+
+
+                        <group>
+                            <group>
+                                <field name="contact"/>
+                            </group>
+                            <group>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="loyalty_point"/>
+                                <field name="loyalty_level"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="khanh_hang_tree_view" model="ir.ui.view">
+            <field name="name">khanh.hang.tree.view</field>
+            <field name="model">khach.hang</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="loyalty_point"/>
+                    <field name="loyalty_level"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="active_khach_hang" model="ir.actions.act_window">
+            <field name="name">active.khach.hang</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">khach.hang</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+        <menuitem name="Managerment" id="managerment_menu_root" parent="loyalty_pogram_menu_root" sequence="1"/>
+        <menuitem name="Contact" id="khach_hang_menu_root" parent="managerment_menu_root" action="active_khach_hang"/>
+
+    </data>
+</odoo>

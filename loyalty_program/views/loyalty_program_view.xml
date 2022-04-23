@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="loyalty_pogram_form_view" model="ir.ui.view">
+            <field name="name">loyalty.pogram.form.view</field>
+            <field name="model">loyalty.program</field>
+            <field name="arch" type="xml">
+                <form string="ModelTitle">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="points"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="loyalty_pogram_tree_view" model="ir.ui.view">
+            <field name="name">loyalty.pogram.tree.view</field>
+            <field name="model">loyalty.program</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="name"/>
+                    <field name="points"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="active_loyalty_pogram" model="ir.actions.act_window">
+            <field name="name">active.loyalty.pogram</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.program</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Loyalty" id="loyalty_pogram_menu_root" action="active_loyalty_pogram"/>
+        <menuitem name="Program" id="active_menu_root" parent="managerment_menu_root" action="active_loyalty_pogram"/>
+<!--        <menuitem name="Contacts" id="contacts_menu" parent="loyalty_pogram_menu_root" action="active_khach_hang"/>-->
+<!--        <menuitem name="Employee" id="menu_employee" parent="main_menu_root" action="action_employee" sequence="0"/>-->
+<!--        <menuitem name="Project" id="menu_project" parent="main_menu_root" action="action_project" sequence="1"/>-->
+<!--        <menuitem name="Progress" id="menu_progress" parent="main_menu_root" action="action_progress" sequence="2"/>-->
+
+    </data>
+</odoo>

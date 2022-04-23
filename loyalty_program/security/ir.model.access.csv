@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_loyalty_program,access.loyalty.program,model_loyalty_program,base.group_user,1,1,1,1
+access_khach_hang,access.khach.hang,model_khach_hang,base.group_user,1,1,1,1
+access_loyalty_history,access.loyatly.history,model_loyalty_history,base.group_user,1,1,1,1
+access_partner_levels,access.partner.levels,model_partner_levels,base.group_user,1,1,1,1

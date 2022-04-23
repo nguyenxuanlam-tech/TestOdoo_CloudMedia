@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="loyatly_history_view" model="ir.ui.view">
+            <field name="name">loyatly.history.view</field>
+            <field name="model">loyalty.history</field>
+            <field name="arch" type="xml">
+                <form string="ModelTitle">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="partner_id"/>
+                            <h1>
+                                <field name="partner_id" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="loyalty_points"/>
+                            </group>
+                            <group>
+                                <field name="money_spent"/>
+                            </group>
+                            <group>
+                                <field name="loyalty_point"/>
+                            </group>
+                            <group>
+                                <field name="date_order"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="loyatly_history_tree_view" model="ir.ui.view">
+            <field name="name">loyatly.history.tree.view</field>
+            <field name="model">loyalty.history</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="partner_id"/>
+                    <field name="loyalty_points"/>
+                    <field name="money_spent"/>
+                    <field name="date_order"/>
+                    <field name="loyalty_point"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_loytly_history" model="ir.actions.act_window">
+            <field name="name">action.loytly.history</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.history</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+        <menuitem name="Reports" id="reports_menu_root" parent="loyalty_pogram_menu_root" sequence="2" />
+        <menuitem name="Activities" id="loytly_history_menu_root" parent="reports_menu_root" action="action_loytly_history"/>
+    </data>
+</odoo>
